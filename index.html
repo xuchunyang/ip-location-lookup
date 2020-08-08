@@ -9,9 +9,10 @@
     <h1>IP Location Lookup</h1>
     <p class="output"></p>
     <script>
+      const output = document.querySelector(".output");
       fetch("api/ip")
   .then(res => res.text())
-  .then(txt => document.querySelector(".output") = txt);
+  .then(txt => output.textContent = txt);
     </script>
   </body>
 </html>
