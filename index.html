@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IP Location Lookup</title>
+  </head>
+  <body>
+    <h1>IP Location Lookup</h1>
+    <p class="output"></p>
+    <script>
+      fetch("api/ip")
+  .then(res => res.text())
+  .then(txt => document.querySelector(".output") = txt);
+    </script>
+  </body>
+</html>
