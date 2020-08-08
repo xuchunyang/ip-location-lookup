@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/xuchunyang/ip-location-lookup/issues"
   },
-  "homepage": "https://github.com/xuchunyang/ip-location-lookup#readme"
+  "homepage": "https://github.com/xuchunyang/ip-location-lookup#readme",
+  "dependencies": {
+    "node-ipinfo": "^1.0.1"
+  }
 }

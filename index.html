@@ -4,15 +4,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IP Location Lookup</title>
+    <style>
+      body {
+        max-width: 750px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        margin: 0 1em;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        flex: 1;
+        margin: 0.5em;
+        width: 100%;
+      }
+
+      input,
+      button {
+        font-size: 100%;
+      }
+
+      pre.output {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 750px) {
+        form {
+          flex-direction: column;
+        }
+      }
+    </style>
   </head>
   <body>
     <h1>IP Location Lookup</h1>
-    <pre class="output"></pre>
+    <form class="container">
+      <label for="input">Enter URL or domain or IP:</label>
+      <input id="input" type="text" required placeholder="e.g., example.com">
+      <button>Lookup</button>
+    </form>
+    <pre class="container output"></pre>
     <script>
+      const input = document.querySelector("#input");
       const output = document.querySelector(".output");
-      fetch("api/ip")
-  .then(res => res.text())
-  .then(txt => output.textContent = txt);
+      function lookup() {
+        fetch("api/ip?q=" + input.value)
+          .then(res => res.text())
+          .then(txt => output.textContent = txt);
+      }
+      document.querySelector("form").onsubmit = (e) => {
+        e.preventDefault();
+        output.textContent = `Lookup ${input.value}...`;
+        lookup();
+      }
+      lookup();
     </script>
   </body>
 </html>
