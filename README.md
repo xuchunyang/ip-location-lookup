@@ -12,7 +12,7 @@ otherwise `q` should be a URL or domain or IP addrss, such as
 `https://emacs-china.org`, `emacs-china.org` and `116.62.40.117`. For example,
 
 ```
-$ curl https://ip-location-lookup.vercel.app/api/ip?q=emacs-china.org
+$ curl 'https://ip-location-lookup.vercel.app/api/ip?q=emacs-china.org'
 {
     "_ip": "116.62.40.117",
     "_city": "Shanghai",
