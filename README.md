@@ -8,7 +8,7 @@ https://ip-location-lookup.vercel.app/
 
 The API endpoint is https://ip-location-lookup.vercel.app/api/ip, if the `q`
 query parameter is omitted or empty, the request client's IP will be used,
-otherwise `q` should be a URL or domain or IP addrss, such as
+otherwise `q` should be a URL or domain or IP address, such as
 `https://emacs-china.org`, `emacs-china.org` and `116.62.40.117`. For example,
 
 ```
